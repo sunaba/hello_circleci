@@ -14,6 +14,8 @@ jobs:
             which python3
             echo 'export CLOUDSDK_PYTHON="/opt/circleci/.pyenv/shims/python3"' >> $BASH_ENV
             echo ${CLOUDSDK_PYTHON}
+            ls -la /usr/bin/python3
+            ls -la /usr/local/bin/python3
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta pubsub-emulator kubectl
             mkdir -p /home/circleci/.config/gcloud
