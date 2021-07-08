@@ -9,8 +9,7 @@ jobs:
       - run:
           name: Setup Gcloud dependencies
           command: |
-            echo 'export CLOUDSDK_PYTHON=`which python3`' >> $BASH_ENV
-            echo ${BASH_ENV}
+            export CLOUDSDK_PYTHON=`which python3`
             echo ${CLOUDSDK_PYTHON}
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta pubsub-emulator kubectl
