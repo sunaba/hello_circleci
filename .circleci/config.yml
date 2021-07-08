@@ -9,6 +9,6 @@ jobs:
       - run:
           name: Setup Gcloud dependencies
           command: |
-            sudo /opt/google-cloud-sdk/bin/gcloud -quiet components update
-            sudo /opt/google-cloud-sdk/bin/gcloud -quiet components install beta pubsub-emulator kubectl
+            sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
+            sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta pubsub-emulator kubectl
             mkdir -p /home/circleci/.config/gcloud
