@@ -5,7 +5,7 @@ jobs:
       image: circleci/classic:edge
 
     environment:
-      CLOUDSDK_PYTHON: which python3
+      CLOUDSDK_PYTHON: `which python3`
 
     steps:
       - checkout
