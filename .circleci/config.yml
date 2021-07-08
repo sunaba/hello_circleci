@@ -5,4 +5,9 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
-      - run: which python3
+      - run:
+        name: Setup Gcloud dependencies
+        command: |
+          sudo /opt/google-cloud-sdk/bin/gcloud -quiet components update
+          sudo /opt/google-cloud-sdk/bin/gcloud -quiet components install beta pubsub-emulator kubectl
+          mkdir -p /home/circleci/.config/gcloud
