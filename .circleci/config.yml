@@ -9,9 +9,7 @@ jobs:
       - run:
           name: Setup Gcloud dependencies
           command: |
-            export CLOUDSDK_PYTHON=`which python3`
-            echo ${CLOUDSDK_PYTHON}
-            pyenv versions
+            pyenv global 3.5.2
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta pubsub-emulator kubectl
             mkdir -p /home/circleci/.config/gcloud
