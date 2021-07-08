@@ -4,11 +4,15 @@ jobs:
     machine:
       image: circleci/classic:edge
 
+    environment:
+      CLOUDPYTHON: which python3
+
     steps:
       - checkout
       - run:
           name: Setup Gcloud dependencies
           command: |
+            echo CLOUDPYTHON
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta pubsub-emulator kubectl
             mkdir -p /home/circleci/.config/gcloud
