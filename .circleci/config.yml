@@ -9,9 +9,10 @@ jobs:
       - run:
           name: Setup Gcloud dependencies
           command: |
+            pyenv global 3.5.2
             python --version
             which python
-            export CLOUDSDK_PYTHON=/opt/circleci/.pyenv/shims/python
+            echo 'export CLOUDSDK_PYTHON=/opt/circleci/.pyenv/shims/python' >> $BASH_ENV
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta pubsub-emulator kubectl
             mkdir -p /home/circleci/.config/gcloud
