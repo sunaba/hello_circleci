@@ -9,6 +9,7 @@ jobs:
       - run:
           name: Setup Gcloud dependencies
           command: |
+            pyenv versions
             pyenv global 3.5.2
             python --version
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
