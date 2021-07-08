@@ -12,7 +12,7 @@ jobs:
             pyenv global 3.5.2
             python --version
             which python3
-            echo 'export CLOUDSDK_PYTHON="/opt/circleci/.pyenv/shims/python"' >> $BASH_ENV
+            echo 'export CLOUDSDK_PYTHON="/opt/circleci/.pyenv/shims/python3"' >> $BASH_ENV
             echo ${CLOUDSDK_PYTHON}
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta pubsub-emulator kubectl
