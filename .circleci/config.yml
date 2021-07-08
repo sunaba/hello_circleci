@@ -5,7 +5,7 @@ jobs:
       image: circleci/classic:edge
 
     environment:
-      CLOUDSDK_PYTHON: python3
+      CLOUDSDK_PYTHON: /opt/circleci/.pyenv/shims/python
 
     steps:
       - checkout
