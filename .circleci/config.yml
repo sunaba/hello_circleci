@@ -4,21 +4,19 @@ jobs:
     machine:
       image: circleci/classic:edge
 
-    environment:
-      CLOUDSDK_PYTHON: /usr/bin/python3
-
     steps:
       - checkout
       - run:
           name: Setup Gcloud dependencies
           command: |
-            # pyenv global 3.5.2
+            pyenv versions
+            # pyenv global 3.5.2 2.7.
             # python --version
             # which python3
             # echo 'export CLOUDSDK_PYTHON="/opt/circleci/.pyenv/shims/python3"' >> $BASH_ENV
             # echo ${CLOUDSDK_PYTHON}
             # ls -la /usr/bin/python3
-            echo ${CLOUDSDK_PYTHON}
+            # echo ${CLOUDSDK_PYTHON}
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta pubsub-emulator kubectl
             mkdir -p /home/circleci/.config/gcloud
