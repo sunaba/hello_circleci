@@ -9,8 +9,8 @@ jobs:
       - run:
           name: Setup Gcloud dependencies
           command: |
-            pyenv global 3.5.2 2.7.12
-            # python --version
+            pyenv global 3.5.2
+            python --version
             # which python3
             # echo 'export CLOUDSDK_PYTHON="/opt/circleci/.pyenv/shims/python3"' >> $BASH_ENV
             # echo ${CLOUDSDK_PYTHON}
