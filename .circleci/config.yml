@@ -4,6 +4,9 @@ jobs:
     machine:
       image: circleci/classic:edge
 
+    environment:
+      CLOUDSDK_PYTHON: python3
+
     steps:
       - checkout
       - run:
@@ -14,7 +17,7 @@ jobs:
             #python --version
             #sudo apt install python3
             #which python3
-            export CLOUDSDK_PYTHON=python3
+            #export CLOUDSDK_PYTHON=python3
             echo ${CLOUDSDK_PYTHON}
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta pubsub-emulator kubectl
