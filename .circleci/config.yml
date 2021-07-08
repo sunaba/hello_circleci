@@ -3,11 +3,13 @@ jobs:
   build:
     machine:
       image: circleci/classic:edge
-    python:
-      version: 3.5.2
 
     steps:
       - checkout
+      - run:
+          name: "Set Python Version"
+          command: pyenv global 3.5.2
+          
       - run:
           name: Setup Gcloud dependencies
           command: |
