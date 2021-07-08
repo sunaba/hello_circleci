@@ -11,6 +11,7 @@ jobs:
           command: |
             export CLOUDSDK_PYTHON=`which python3`
             echo ${CLOUDSDK_PYTHON}
+            pyenv versions
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
             sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta pubsub-emulator kubectl
             mkdir -p /home/circleci/.config/gcloud
